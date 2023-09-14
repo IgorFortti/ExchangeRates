@@ -105,42 +105,48 @@ struct RateFluctuationDetailView: View {
     }
     
     private var lineChartView: some View {
-        Chart(viewModel.ratesHistorical) { item in
-            LineMark(
-                x: .value("Period", item.period),
-                y: .value("Rates", item.endRate)
-            )
-            .interpolationMethod(.catmullRom)
-            
-            if !viewModel.hasRates {
-                RuleMark(
-                    y: .value("Conversão Zero", 0)
-                )
-                .annotation(position: .overlay, alignment: .center) {
-                    Text("Sem valores nesse período")
-                        .font(.footnote)
-                        .padding()
-                        .background(Color(UIColor.systemBackground))
-                }
-            }
-        }
-        .chartXAxis {
-            AxisMarks(preset: .aligned, values: .stride(by: viewModel.xAxisStride, count: viewModel.xAxisStrideCount)) { date in
-                AxisGridLine()
-                AxisValueLabel(viewModel.xAxisLabelFormatStyle(for: date.as(Date.self) ?? Date()))
-            }
-        }
-        .chartYAxis {
-            AxisMarks(position: .leading) { rate in
-                AxisGridLine()
-                AxisValueLabel(rate.as(Double.self)?.formatter(decimalPlaces: 3) ?? 0.0.formatter(decimalPlaces: 3))
-            }
-            
-        }
-        .chartYScale(domain: viewModel.yAxisMin...viewModel.yAxisMax)
-        .frame(height: 260)
-        .padding(.trailing, 18)
+        LineChartViewWrapper(data: viewModel.chartData)
+            .frame(height: 260)
+            .padding(.trailing, 18)
     }
+    
+//    private var lineChartView: some View {
+//        Chart(viewModel.ratesHistorical) { item in
+//            LineMark(
+//                x: .value("Period", item.period),
+//                y: .value("Rates", item.endRate)
+//            )
+//            .interpolationMethod(.catmullRom)
+//
+//            if !viewModel.hasRates {
+//                RuleMark(
+//                    y: .value("Conversão Zero", 0)
+//                )
+//                .annotation(position: .overlay, alignment: .center) {
+//                    Text("Sem valores nesse período")
+//                        .font(.footnote)
+//                        .padding()
+//                        .background(Color(UIColor.systemBackground))
+//                }
+//            }
+//        }
+//        .chartXAxis {
+//            AxisMarks(preset: .aligned, values: .stride(by: viewModel.xAxisStride, count: viewModel.xAxisStrideCount)) { date in
+//                AxisGridLine()
+//                AxisValueLabel(viewModel.xAxisLabelFormatStyle(for: date.as(Date.self) ?? Date()))
+//            }
+//        }
+//        .chartYAxis {
+//            AxisMarks(position: .leading) { rate in
+//                AxisGridLine()
+//                AxisValueLabel(rate.as(Double.self)?.formatter(decimalPlaces: 3) ?? 0.0.formatter(decimalPlaces: 3))
+//            }
+//
+//        }
+//        .chartYScale(domain: viewModel.yAxisMin...viewModel.yAxisMax)
+//        .frame(height: 260)
+//        .padding(.trailing, 18)
+//    }
     
     private var comparationView: some View {
         VStack(spacing: 8) {
@@ -206,6 +212,27 @@ extension RateFluctuationDetailView: BaseCurrencyFilterViewDelegate {
     
     func didSelected(_ baseCurrency: String) {
         viewModel.doFilter(by: baseCurrency)
+    }
+}
+
+struct LineChartViewWrapper: UIViewRepresentable {
+    var data: LineChartData?
+    var axisMinimum: Double?
+    var axisMaximum: Double?
+    
+    func makeUIView(context: Context) -> LineChartView {
+        let chartView = LineChartView()
+        chartView.data = data
+        chartView.xAxis.labelPosition = .bottom
+        chartView.leftAxis.labelPosition = .outsideChart
+        chartView.leftAxis.axisMinimum = axisMinimum ?? 0.0
+        chartView.leftAxis.axisMaximum = axisMinimum ?? 8.0
+        chartView.legend.enabled = true
+        return chartView
+    }
+
+    func updateUIView(_ uiView: LineChartView, context: Context) {
+        uiView.data = data
     }
 }
 

@@ -32,6 +32,7 @@ class GenericStoreRequest: GenericStoreProtocol {
                 let object = try JSONDecoder().decode(T.self, from: data)
                 completion(object, nil)
             } catch {
+                debugPrint("%%%%\(error.localizedDescription)")
                 completion(nil, error)
             }
         }

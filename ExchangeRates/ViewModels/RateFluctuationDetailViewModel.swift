@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import Combine
+import Charts
 
 extension RateFluctuationDetailView {
     @MainActor class ViewModel: ObservableObject {
@@ -25,6 +26,8 @@ extension RateFluctuationDetailView {
         @Published var baseCurrency: String?
         @Published var fromCurrency: String?
         @Published var rateFluctuation: RateFluctuationModel?
+        
+        @Published var chartData: LineChartData?
         
         private var fluctuationDataProvider: RatesFluctuationDataProvider?
         private var historicalDataProvider: RatesHistoricalDataProvider?
@@ -143,7 +146,7 @@ extension RateFluctuationDetailView {
         }
         
         private func doFetchRatesFluctuation() {
-            if let baseCurrency {
+            if let baseCurrency = baseCurrency {
                 let startDate = timeRange.date.toString()
                 let endDate = Date().toString()
                 fluctuationDataProvider?.fetchFluctuation(by: baseCurrency, from: [], startDate: startDate, endDate: endDate)
@@ -160,7 +163,7 @@ extension RateFluctuationDetailView {
         }
         
         private func doFetchRatesHistorical() {
-            if let baseCurrency, let currency = fromCurrency {
+            if let baseCurrency = baseCurrency, let currency = fromCurrency {
                 let startDate = timeRange.date.toString()
                 let endDate = Date().toString()
                 historicalDataProvider?.fetchTimeseries(by: baseCurrency, from: currency, startDate: startDate, endDate: endDate)
@@ -171,8 +174,25 @@ extension RateFluctuationDetailView {
                         }
                     }, receiveValue: { ratesHistorical in
                         self.ratesHistorical = ratesHistorical.sorted { $0.period > $1.period }
+                        self.updateChartData()
                     }).store(in: &cancelables)
             }
         }
+        
+        private func updateChartData() {
+                var dataEntries: [ChartDataEntry] = []
+                for historicalRate in ratesHistorical {
+                    let dataEntry = ChartDataEntry(x: historicalRate.period.timeIntervalSince1970, y: historicalRate.endRate)
+                    dataEntries.append(dataEntry)
+                }
+
+                let dataSet = LineChartDataSet(entries: dataEntries, label: "Rates")
+                dataSet.drawCirclesEnabled = false
+                dataSet.mode = .cubicBezier
+                dataSet.lineWidth = 2.0
+                dataSet.setColor(.blue)
+
+                chartData = LineChartData(dataSet: dataSet)
+            }
     }
 }

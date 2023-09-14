@@ -42,6 +42,7 @@ extension RatesFluctuationView {
             let startDate = timeRange.date.toString()
             let endDate = Date().toString()
             dataProvider?.fetchFluctuation(by: baseCurrency, from: currencies, startDate: startDate, endDate: endDate)
+                .receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { completion in
                     switch completion {
                     case .finished:

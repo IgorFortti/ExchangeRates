@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		FA0E50CB2AB1ED5D00F4BA30 /* ExchangeRatesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E50CA2AB1ED5D00F4BA30 /* ExchangeRatesApp.swift */; };
 		FA0E50CD2AB1ED5D00F4BA30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E50CC2AB1ED5D00F4BA30 /* ContentView.swift */; };
-		FA0E50CF2AB1ED6000F4BA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0E50CE2AB1ED6000F4BA30 /* Assets.xcassets */; };
 		FA0E50D22AB1ED6000F4BA30 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0E50D12AB1ED6000F4BA30 /* Preview Assets.xcassets */; };
 		FA0E50DD2AB1F26A00F4BA30 /* RatesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E50DC2AB1F26A00F4BA30 /* RatesApi.swift */; };
 		FA0E50E02AB1F4D300F4BA30 /* RatesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E50DF2AB1F4D300F4BA30 /* RatesRouter.swift */; };
@@ -32,6 +31,8 @@
 		FA0E510A2AB22F8D00F4BA30 /* RateFluctuationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E51092AB22F8D00F4BA30 /* RateFluctuationModel.swift */; };
 		FA0E510C2AB22F9A00F4BA30 /* RateHistoricalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E510B2AB22F9A00F4BA30 /* RateHistoricalModel.swift */; };
 		FA0E510E2AB22FA400F4BA30 /* TimeRangeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E510D2AB22FA400F4BA30 /* TimeRangeEnum.swift */; };
+		FA2230AB2AB3816900313A8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA2230AA2AB3816900313A8E /* Assets.xcassets */; };
+		FA2230AE2AB3843B00313A8E /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = FA2230AD2AB3843B00313A8E /* Charts */; };
 		FA7B6DBF2AB25D6200573AC7 /* BaseCurrencyFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B6DBE2AB25D6200573AC7 /* BaseCurrencyFilterViewModel.swift */; };
 		FA7B6DC12AB25D6B00573AC7 /* MultiCurrenciesFilterViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B6DC02AB25D6B00573AC7 /* MultiCurrenciesFilterViewViewModel.swift */; };
 		FA7B6DC32AB25D7300573AC7 /* RateFluctuationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B6DC22AB25D7300573AC7 /* RateFluctuationDetailViewModel.swift */; };
@@ -39,10 +40,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FA0E50C72AB1ED5D00F4BA30 /* ExchangeRates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeRates.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA0E50C72AB1ED5D00F4BA30 /* Exchange Rates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Exchange Rates.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0E50CA2AB1ED5D00F4BA30 /* ExchangeRatesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesApp.swift; sourceTree = "<group>"; };
 		FA0E50CC2AB1ED5D00F4BA30 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FA0E50CE2AB1ED6000F4BA30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA0E50D12AB1ED6000F4BA30 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FA0E50DC2AB1F26A00F4BA30 /* RatesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesApi.swift; sourceTree = "<group>"; };
 		FA0E50DF2AB1F4D300F4BA30 /* RatesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesRouter.swift; sourceTree = "<group>"; };
@@ -65,6 +65,7 @@
 		FA0E51092AB22F8D00F4BA30 /* RateFluctuationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateFluctuationModel.swift; sourceTree = "<group>"; };
 		FA0E510B2AB22F9A00F4BA30 /* RateHistoricalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateHistoricalModel.swift; sourceTree = "<group>"; };
 		FA0E510D2AB22FA400F4BA30 /* TimeRangeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRangeEnum.swift; sourceTree = "<group>"; };
+		FA2230AA2AB3816900313A8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Downloads/ExchangeRates-main/ExchangeRates/Assets.xcassets"; sourceTree = "<group>"; };
 		FA7B6DBE2AB25D6200573AC7 /* BaseCurrencyFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCurrencyFilterViewModel.swift; sourceTree = "<group>"; };
 		FA7B6DC02AB25D6B00573AC7 /* MultiCurrenciesFilterViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiCurrenciesFilterViewViewModel.swift; sourceTree = "<group>"; };
 		FA7B6DC22AB25D7300573AC7 /* RateFluctuationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateFluctuationDetailViewModel.swift; sourceTree = "<group>"; };
@@ -76,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2230AE2AB3843B00313A8E /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +95,7 @@
 		FA0E50C82AB1ED5D00F4BA30 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA0E50C72AB1ED5D00F4BA30 /* ExchangeRates.app */,
+				FA0E50C72AB1ED5D00F4BA30 /* Exchange Rates.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,7 +108,7 @@
 				FA0E50F92AB2224500F4BA30 /* Views */,
 				FA7B6DBD2AB25D4900573AC7 /* ViewModels */,
 				FA0E50CA2AB1ED5D00F4BA30 /* ExchangeRatesApp.swift */,
-				FA0E50CE2AB1ED6000F4BA30 /* Assets.xcassets */,
+				FA2230AA2AB3816900313A8E /* Assets.xcassets */,
 				FA0E50D02AB1ED6000F4BA30 /* Preview Content */,
 				FA0E51042AB229DF00F4BA30 /* Extension.swift */,
 			);
@@ -246,8 +248,11 @@
 			dependencies = (
 			);
 			name = ExchangeRates;
+			packageProductDependencies = (
+				FA2230AD2AB3843B00313A8E /* Charts */,
+			);
 			productName = ExchangeRates;
-			productReference = FA0E50C72AB1ED5D00F4BA30 /* ExchangeRates.app */;
+			productReference = FA0E50C72AB1ED5D00F4BA30 /* Exchange Rates.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -274,6 +279,9 @@
 				Base,
 			);
 			mainGroup = FA0E50BE2AB1ED5D00F4BA30;
+			packageReferences = (
+				FA2230AC2AB3843B00313A8E /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = FA0E50C82AB1ED5D00F4BA30 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -289,7 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA0E50D22AB1ED6000F4BA30 /* Preview Assets.xcassets in Resources */,
-				FA0E50CF2AB1ED6000F4BA30 /* Assets.xcassets in Resources */,
+				FA2230AB2AB3816900313A8E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,14 +474,14 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.igorfortti.ExchangeRates;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Exchange Rates";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -497,14 +505,14 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.igorfortti.ExchangeRates;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Exchange Rates";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -533,6 +541,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA2230AC2AB3843B00313A8E /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA2230AD2AB3843B00313A8E /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA2230AC2AB3843B00313A8E /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA0E50BF2AB1ED5D00F4BA30 /* Project object */;
 }
